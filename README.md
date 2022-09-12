@@ -1,16 +1,6 @@
 # e_ventory
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+A Social Media app which is created using Flutter for the frontend and Firebase for the backend.  
+Its UI is fairly similar to instagram but with different features.  
+In this app, you are only allowed to post pictures about clothing items you have in your wardrobe.  
+This requires a level of image labelling and detection and is implemented using Firebase ML Kit
