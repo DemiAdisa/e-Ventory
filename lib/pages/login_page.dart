@@ -27,7 +27,8 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                titleWidget(),
+                _titleWidget(),
+                _loginButton(),
               ],
             ),
           ),
@@ -36,13 +37,27 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget titleWidget() {
+  Widget _titleWidget() {
     return const Text(
       "e-Ventory",
       style: TextStyle(
         color: Colors.black,
         fontSize: 25,
         fontWeight: FontWeight.w600,
+      ),
+    );
+  }
+
+  Widget _loginButton() {
+    return ElevatedButton(
+      onPressed: () {},
+      child: const Text(
+        "Login",
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 25,
+          fontWeight: FontWeight.w600,
+        ),
       ),
     );
   }
