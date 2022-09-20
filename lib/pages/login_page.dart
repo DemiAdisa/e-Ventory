@@ -35,6 +35,7 @@ class _LoginPageState extends State<LoginPage> {
                 _titleWidget(),
                 _loginForm(),
                 _loginButton(),
+                _registerPageLink(),
               ],
             ),
           ),
@@ -72,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
       validator: (value) {
         bool _result = value!.contains(RegExp(
             r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+"));
-        _result ? null : "Please enter a valid email";
+        return _result ? null : "Please enter a valid email";
       },
     );
   }
@@ -120,7 +121,7 @@ class _LoginPageState extends State<LoginPage> {
     return MaterialButton(
       minWidth: _deviceWidth! * 0.70,
       height: _deviceHeight! * 0.06,
-      onPressed: () {},
+      onPressed: _loginUser,
       color: Colors.red,
       child: const Text(
         "Login",
@@ -131,5 +132,25 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  Widget _registerPageLink() {
+    return GestureDetector(
+      onTap: () => Navigator.pushNamed(context, 'register'),
+      child: const Text(
+        "Dont have an account? Register here!",
+        style: TextStyle(
+          color: Colors.blue,
+          fontSize: 15,
+          fontWeight: FontWeight.w400,
+        ),
+      ),
+    );
+  }
+
+  void _loginUser() {
+    if (_loginFormKey.currentState!.validate()) {
+      _loginFormKey.currentState!.save();
+    }
   }
 }
